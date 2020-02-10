@@ -1,7 +1,7 @@
 @import "fonts.scss";
 
-$black: #0a0b0a;
-$blue: #3e6ef8;
+$black: #151A1E;
+$green: #9EE727;
 $white: #fff;
 $grey: #8b9497;
 $bgDark: #1a1a1a;
@@ -10,14 +10,14 @@ $brown: #484848;
 @mixin base-sizes() {
   &__size {
     &_l {
-      width: 130px;
+      width: rem(546px);
     }
     &_s {
-      width: 85px;
+      width: rem(446px);
     }
     &_full {
       width: 100%;
-      height: 42px;
+      height: rem(42px);
     }
   }
 }
@@ -49,21 +49,21 @@ $brown: #484848;
       }
     }
     &_right {
-      margin-right: 10px;
+      margin-right: rem(10px);
       &_x2 {
-        margin-right: 20px;
+        margin-right: rem(20px);
       }
     }
     &_top {
-      margin-top: 10px;
+      margin-top: rem(10px);
       &_x2 {
-        margin-top: 20px;
+        margin-top: rem(20px);
       }
     }
     &_bottom {
-      margin-bottom: 10px;
+      margin-bottom: rem(10px);
       &_x2 {
-        margin-bottom: 20px;
+        margin-bottom: rem(20px);
       }
     }
   }
@@ -85,6 +85,9 @@ $brown: #484848;
 
 @mixin base-weight() {
   &__weight {
+    &_400 {
+      font-weight: 400;
+    }
     &_500 {
       font-weight: 500;
     }
@@ -105,15 +108,10 @@ $brown: #484848;
   font-weight: $weight;
 }
 
-@mixin accent-font($weight) {
-  font-family: "Raleway", sans-serif;
-  font-weight: $weight;
-}
-
 h1,h2,h3,h4,h5,h6,p {
   padding: 0;
   margin: 0;
-  font-size: 16px;
+  font-size: rem(16px);
 }
 ul,ol {
   padding: 0;
@@ -128,12 +126,12 @@ div {
 a {
   text-decoration: none;
   color: $black;
-  font-size: 16px;
+  font-size: rem(16px);
 }
 body {
-  font-size: 13px;
+  font-size: rem(13px);
   @include main-font(500);
-  background-color: #0F273C;
+  background-color: #151C26;
   padding: 0;
   box-sizing: border-box;
   margin: 0;
@@ -146,7 +144,7 @@ body {
 
 // Responsive settings
 $screenSizes: (
-        desktop: 1320px,
+        desktop: 1440px,
         desktop-small: 1150px,
         tablet: 991px,
         mobile: 768px,
@@ -167,19 +165,90 @@ $screenSizes: (
 }
 
 @mixin container-size() {
-  width: 1110px;
+  width: 95%;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 rem(20px);
   @include screen-lt(desktop) {
     width: 100%;
   }
 }
 
-@mixin bgImage($image) {
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-image: url($image);
-  @include screen-lt(mobile-small) {
-    background-position: 51% 0;
+
+// Convertation px to rem settings
+$rem-baseline: 16px;
+$rem-fallback: false !default;
+$rem-px-only: false !default;
+@function rem-separator($list, $separator: false) {
+  @if $separator == 'comma' or $separator == 'space' {
+    @return append($list, null, $separator);
+  }
+
+  @if function-exists('list-separator') == true {
+    @return list-separator($list);
+  }
+
+  $test-list: ();
+  @each $item in $list {
+    $test-list: append($test-list, $item, space);
+  }
+
+  @return if($test-list == $list, space, comma);
+}
+
+@mixin rem-baseline($zoom: 100%) {
+  font-size: $zoom / 16px * $rem-baseline;
+}
+
+@function rem-convert($to, $values...) {
+  $result: ();
+  $separator: rem-separator($values);
+
+  @each $value in $values {
+    @if type-of($value) == 'number' and unit($value) == 'rem' and $to == 'px' {
+      $result: append($result, $value / 1rem * $rem-baseline + 0px, $separator);
+    } @else if type-of($value) == 'number' and unit($value) == 'px' and $to == 'rem' {
+      $result: append($result, $value / $rem-baseline + 0rem, $separator);
+    } @else if type-of($value) == 'list' {
+      $value-separator: rem-separator($value);
+      $value: rem-convert($to, $value...);
+      $value: rem-separator($value, $value-separator);
+      $result: append($result, $value, $separator);
+    } @else {
+      $result: append($result, $value, $separator);
+    }
+  }
+
+  @return if(length($result) == 1, nth($result, 1), $result);
+}
+
+@function rem($values...) {
+  @if $rem-px-only {
+    @return rem-convert(px, $values...);
+  } @else {
+    @return rem-convert(rem, $values...);
+  }
+}
+
+@mixin rem($properties, $values...) {
+  @if type-of($properties) == 'map' {
+    @each $property in map-keys($properties) {
+      @include rem($property, map-get($properties, $property));
+    }
+  } @else {
+    @each $property in $properties {
+      @if $rem-fallback or $rem-px-only {
+        #{$property}: rem-convert(px, $values...);
+      }
+      @if not $rem-px-only {
+        #{$property}: rem-convert(rem, $values...);
+      }
+    }
+  }
+}
+
+html {
+  @include rem-baseline;
+  @include screen-lt(desktop) {
+    @include rem-baseline(80%);
   }
 }

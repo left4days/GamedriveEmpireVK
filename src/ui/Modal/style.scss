@@ -17,10 +17,10 @@
   }
 
   &__inner {
-    width: 350px;
-    padding: 20px 40px;
+    width: rem(350px);
+    padding: rem(20px 40px);
     background-color: $bgDark;
-    border: 1px solid $blue;
+    border: 1px solid $green;
     z-index: 20;
     display: flex;
     align-items: center;
@@ -35,14 +35,14 @@
     }
   }
   &_close {
-    border: 2px solid $blue;
-    width: 40px;
-    height: 40px;
+    border: 2px solid $green;
+    width: rem(40px);
+    height: rem(40px);
     display: flex;
     align-items: center;
-    color: $blue;
-    top: -20px;
-    right: -20px;
+    color: $green;
+    top: rem(-20px);
+    right: rem(-20px);
     cursor: pointer;
     background-color: $bgDark;
     position: absolute;

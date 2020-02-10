@@ -11,7 +11,7 @@
     &:after {
       content: ' ';
       display: block;
-      margin: -5px;
+      margin: rem(-5px);
       border-radius: 50%;
     }
 
@@ -44,8 +44,8 @@
       }
       &_orange {
         &:after {
-          border: 5px solid $blue;
-          border-color: $blue transparent $blue transparent;
+          border: 5px solid $green;
+          border-color: $green transparent $green transparent;
         }
       }
     }

@@ -24,8 +24,8 @@ Title.propTypes = {
     align: PropTypes.oneOf(['left', 'center', 'right']),
     margin: PropTypes.oneOf(['left', 'right', 'top', 'bottom', 'left_x2', 'right_x2', 'top_x2', 'bottom_x2', false]),
     tagName: PropTypes.oneOf(['h1', 'h2']),
-    color: PropTypes.oneOf(['white', 'orange']),
-    weight: PropTypes.oneOf(['500', '600', '700', '800']),
+    color: PropTypes.oneOf(['white', 'green', 'black']),
+    weight: PropTypes.oneOf(['400', '500', '600', '700', '800']),
     extraCLass: PropTypes.string,
     containerClassName: PropTypes.string,
 };

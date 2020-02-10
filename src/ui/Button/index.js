@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import style from './style.scss';
+import './style.scss';
 
 function Button({ onClick, className, children, size, disabled, style, type, margin, link }) {
     if (link) {

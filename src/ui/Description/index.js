@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './style.scss';
 
-const Description = ({ children, align, className, margin, size, weight }) => {
+const Description = ({ children, align, className, margin, size, weight, color }) => {
     return (
         <p
             className={cx(
@@ -12,6 +12,7 @@ const Description = ({ children, align, className, margin, size, weight }) => {
                 style[`description__margin_${margin}`],
                 style[`description__weight_${weight}`],
                 style[`description__size_${size}`],
+                style[`description__color_${color}`],
                 className
             )}
         >
@@ -25,8 +26,9 @@ Description.propTypes = {
     className: PropTypes.string,
     align: PropTypes.oneOf(['left', 'center', 'right']),
     size: PropTypes.oneOf(['s', 'm', 'l']),
-    weight: PropTypes.oneOf(['500', '600', '700', '800']),
+    weight: PropTypes.oneOf(['400', '500', '600', '700', '800']),
     margin: PropTypes.oneOf(['left', 'right', 'top', 'bottom', 'left_x2', 'right_x2', 'top_x2', 'bottom_x2', false]),
+    color: PropTypes.oneOf(['white', 'green', 'black']),
 };
 
 Description.defaultProps = {

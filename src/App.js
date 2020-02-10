@@ -34,10 +34,10 @@ class App extends Component {
                         );
                     })}
                 </div>
-                <div className="footer">
-                    <Description>© SEAGATE & Team Empire</Description>
-                    <Link to="/policy">Политика конфиденциальности</Link>
-                </div>
+                {/*<div className="footer">*/}
+                {/*    <Description>© SEAGATE & Team Empire</Description>*/}
+                {/*    <Link to="/policy">Политика конфиденциальности</Link>*/}
+                {/*</div>*/}
                 <Modal
                     modal={modal}
                     handleModal={this.handleModal}

@@ -1,18 +1,29 @@
 .description {
   color: $white;
-  @include accent-font(500);
   @include base-aligns();
   @include base-margins();
   @include base-weight();
   &__size {
     &_l {
-      font-size: 38px;
+      font-size: rem(50px);
     }
     &_m {
-      font-size: 16px;
+      font-size: rem(24px);
     }
     &_s {
-      font-size: 12px;
+      font-size: rem(12px);
+    }
+  }
+
+  &__color {
+    &_white {
+      color: $white;
+    }
+    &_green {
+      color: $green;
+    }
+    &_black {
+      color: $black;
     }
   }
 }

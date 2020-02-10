@@ -1,7 +1,7 @@
 $transitionHover: ease-in 200ms;
 $transitionActive: ease-in 150ms;
 
-$btn-void: linear-gradient(to top, #3eb4f8, #3e6ef8), $white, linear-gradient(to top, #3596ce, #355fd8), $white, linear-gradient(to top, #29aefb, #2f63f9), $white, $grey, $white;
+$btn-void: $green, $black, #B5FF27, $black, #7CC427, $black, $grey, $black;
 $btn-fill: transparent, $white, #ff510047, $white, transparent, $white, $grey, $white;
 @mixin btn-style(
   $colorBgDefault,
@@ -34,15 +34,15 @@ $btn-fill: transparent, $white, #ff510047, $white, transparent, $white, $grey, $
 .ux-button {
   @include base-sizes();
   @include base-margins();
-  height: 27px;
+  height: rem(85px);
   align-items: center;
   justify-content: center;
+  border: none;
   cursor: pointer;
   display: flex;
-  font-size: 12px;
-  border-radius: 5px;
-  border: 2px solid #065baa;
-  @include main-font(600);
+  font-size: rem(36px);
+  border-radius: rem(10px);
+  @include main-font(700);
   text-transform: uppercase;
   &:focus {
     outline: none;
@@ -62,9 +62,9 @@ $btn-fill: transparent, $white, #ff510047, $white, transparent, $white, $grey, $
     }
     &_fill {
       @include btn-style($btn-fill...);
-      border: 1px solid $blue;
+      border: 1px solid $green;
       &:hover {
-        border: 1px solid $blue;
+        border: 1px solid $green;
       }
     }
   }
