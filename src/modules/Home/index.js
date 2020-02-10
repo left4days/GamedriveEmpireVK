@@ -3,7 +3,7 @@ import { Column } from 'ui/Layout';
 
 import style from './style.scss';
 
-function Home({ handleModal, user, actionState, mainWinnerData }) {
+function Home({ handleModal }) {
     return (
         <Column className={style.home}>
             <Column className={style.container}>test</Column>

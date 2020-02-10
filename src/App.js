@@ -7,6 +7,8 @@ import style from './style.scss';
 import { Description } from 'ui/Description';
 
 class App extends Component {
+    state = { modal: null };
+
     handleModal = (type, modalProps) => {
         this.setState({ modal: type, modalProps });
     };
