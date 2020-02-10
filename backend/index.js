@@ -1,13 +1,6 @@
 const debug = require('debug')('geneticdiamond:server');
 const http = require('http');
 const port = normalizePort(process.env.PORT || '3001');
-const firebaseAdmin = require('firebase-admin');
-const serviceAccount = require('./firebaseKey.json');
-
-firebaseAdmin.initializeApp({
-    credential: firebaseAdmin.credential.cert(serviceAccount),
-    databaseURL: 'https://seagateempirepromo.firebaseio.com',
-});
 
 const app = require('./server');
 
