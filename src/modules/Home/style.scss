@@ -1,4 +1,10 @@
 .home {
+  &__decor {
+    margin-bottom: rem(70px);
+    img {
+      width: 40%;
+    }
+  }
 }
 
 .container {

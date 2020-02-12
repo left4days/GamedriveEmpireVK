@@ -1,7 +1,10 @@
 .header {
   height: rem(90px);
   border-bottom: 1px solid rgba(255,255,255,0.2);
+  display: flex;
   img {
+    height: 100%;
+    display: flex;
     margin: 0 rem(50px);
     &:first-child {
       width: rem(157px);

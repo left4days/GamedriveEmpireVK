@@ -1,17 +1,20 @@
 import React from 'react';
-import { Header } from 'widgets/Header';
 import { MainBlock } from './components/MainBlock';
+import { SecondBlock } from './components/SecondBlock';
+import { ThirdBlock } from './components/ThirdBlock';
 import { Column } from 'ui/Layout';
-import { Title } from 'ui/Title';
 
+import decorationImage from 'statics/image_3block_decor.png';
 import style from './style.scss';
 
 function Home({ handleModal }) {
     return (
         <Column className={style.home}>
-            <Header />
-            <Column className={style.container}>
-                <MainBlock />
+            <MainBlock />
+            <SecondBlock />
+            <ThirdBlock />
+            <Column className="home__decor">
+                <img src={decorationImage} alt="decoration-image" />
             </Column>
         </Column>
     );

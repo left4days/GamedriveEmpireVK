@@ -3,6 +3,10 @@
   display: flex;
   padding: rem(40px);
   position: relative;
+  @include screen-lt(mobile) {
+    padding: rem(30px);
+  }
+
 
   &__wrapper {
     border: rem(9px) solid $green;
@@ -12,6 +16,10 @@
     justify-content: center;
     padding: rem(40px);
     height: 100%;
+    @include screen-lt(mobile) {
+      width: 100%;
+      padding: rem(20px);
+    }
   }
 
   &__row {
@@ -32,11 +40,43 @@
       background-repeat: no-repeat;
       -webkit-background-size: contain;
       background-size: contain;
+      @include screen-lt(mobile) {
+        background-image: none;
+      }
     }
   }
   h2, p {
     text-transform: uppercase;
   }
+  h2 {
+    @include screen-lt(desktop) {
+      font-size: rem(61px);
+    }
+    @include screen-lt(desktop-x-small) {
+      font-size: rem(56px);
+    }
+    @include screen-lt(tablet) {
+      font-size: rem(40px);
+    }
+    @include screen-lt(mobile) {
+      font-size: 5.5vw;
+    }
+  }
+  .description__color_green {
+    @include screen-lt(tablet) {
+      font-size: rem(40px);
+    }
+    @include screen-lt(mobile) {
+      font-size: 5.5vw;
+    }
+  }
+
+  p {
+    @include screen-lt(mobile) {
+      font-size: 3.5vw;
+    }
+  }
+
   &__title {
     position: relative;
     width: fit-content;
@@ -52,13 +92,38 @@
       height: 105%;
     }
   }
+
+  &__mobile {
+    display: none;
+    @include screen-lt(mobile) {
+      display: flex;
+      margin-left: rem(-30px);
+      width: calc(100% + 3.75rem);
+      margin-top: rem(80px);
+    }
+  }
   button {
     margin: rem(75px 0 26px 0);
+    @include screen-lt(mobile) {
+      margin: rem(100px 0 26px 0);
+      width: 100%;
+      font-size: 6vw;
+    }
   }
-  img {
+  .main-block__gift {
     width: rem(700px);
     position: absolute;
-    right: -160px;
+    right: -190px;
     bottom: -50px;
+    z-index: 4;
+    @include screen-lt(desktop) {
+      width: rem(650px);
+    }
+    @include screen-lt(tablet) {
+      width: rem(450px);
+    }
+    @include screen-lt(mobile) {
+      display: none;
+    }
   }
 }

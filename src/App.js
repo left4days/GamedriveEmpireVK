@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Modal } from 'ui/Modal';
 import routes from './routes';
-import style from './style.scss';
+import { Header } from 'widgets/Header';
+import './style.scss';
 import { Description } from 'ui/Description';
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
         const { modal, modalProps } = this.state;
         return (
             <Router>
+                <Header />
                 <div className="app">
                     {routes.map(route => {
                         const { path, exact, Component } = route;
@@ -34,10 +36,10 @@ class App extends Component {
                         );
                     })}
                 </div>
-                {/*<div className="footer">*/}
-                {/*    <Description>© SEAGATE & Team Empire</Description>*/}
-                {/*    <Link to="/policy">Политика конфиденциальности</Link>*/}
-                {/*</div>*/}
+                <div className="footer">
+                    <Description>© SEAGATE & Team Empire</Description>
+                    <Link to="/policy">Политика конфиденциальности</Link>
+                </div>
                 <Modal
                     modal={modal}
                     handleModal={this.handleModal}

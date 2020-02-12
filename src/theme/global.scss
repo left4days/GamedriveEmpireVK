@@ -144,8 +144,9 @@ body {
 
 // Responsive settings
 $screenSizes: (
-        desktop: 1440px,
-        desktop-small: 1150px,
+        desktop: 1640px,
+        desktop-small: 1440px,
+        desktop-x-small: 1200px,
         tablet: 991px,
         mobile: 768px,
         mobile-small: 480px,
@@ -251,4 +252,8 @@ html {
   @include screen-lt(desktop) {
     @include rem-baseline(80%);
   }
+  @include screen-lt(desktop-x-small) {
+    @include rem-baseline(70%);
+  }
+
 }
