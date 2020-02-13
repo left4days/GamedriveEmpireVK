@@ -30,7 +30,6 @@ const MainBlock = () => {
                         <a
                             className="ux-button ux-button__size_s ux-button__style_void ux-button__margin_false"
                             href="#"
-                            onClick="ym(57521749, 'reachGoal', 'RUN'); return true;"
                             target="_blank"
                         >
                             Участвовать
