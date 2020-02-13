@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/image_2block_gamedrive.76e35511.png"
   },
   {
-    "revision": "45054620b4e4808d9731",
-    "url": "/static/js/main.5f9e9e59.chunk.js"
+    "revision": "c43e435a84cbccf26171",
+    "url": "/static/js/main.fb65bea3.chunk.js"
   },
   {
     "revision": "6b8c96d54949d295b8d033404db30592",
@@ -64,7 +64,7 @@ self.__precacheManifest = [
     "url": "/static/js/2.9ebdb058.chunk.js"
   },
   {
-    "revision": "d83f100422a998ab953d27b9441f0f97",
+    "revision": "c9571d50a4412fb6c4c4c32a32654415",
     "url": "/index.html"
   }
 ];
