@@ -1,9 +1,10 @@
 import React from 'react';
+import { DefaultModal } from './DefaultModal';
 
 export function getModal(type, handleModal, modalProps) {
     switch (type) {
         case 'default':
-            return <p>hello</p>;
+            return <DefaultModal />;
         default:
             return null;
     }

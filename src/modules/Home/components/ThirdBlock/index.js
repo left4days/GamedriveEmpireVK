@@ -6,7 +6,7 @@ import { Button } from 'ui/Button';
 import diskImage from 'statics/image_3block_disk2.png';
 import './style.scss';
 
-const ThirdBlock = () => {
+const ThirdBlock = ({ handleModal }) => {
     return (
         <Row className="third-block__row">
             <Row className="container">
@@ -21,7 +21,7 @@ const ThirdBlock = () => {
                         Этот портативный автоматически настраиваемый накопитель для игр можно взять  куда угодно. Чтобы
                         продолжить игру, просто войдите в свой аккаунт PSN
                     </Description>
-                    <Button>Где купить</Button>
+                    <Button onClick={() => handleModal('default')}>Где купить</Button>
                 </Column>
                 <Column className="third-block__image">
                     <img src={diskImage} alt="disk-image" />

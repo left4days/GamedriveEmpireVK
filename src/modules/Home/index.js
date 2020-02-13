@@ -12,7 +12,7 @@ function Home({ handleModal }) {
         <Column className={style.home}>
             <MainBlock />
             <SecondBlock />
-            <ThirdBlock />
+            <ThirdBlock handleModal={handleModal} />
             <Column className="home__decor">
                 <img src={decorationImage} alt="decoration-image" />
             </Column>
