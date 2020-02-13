@@ -23,6 +23,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include screen-lt(mobile-small) {
+      padding: 0;
+    }
   }
   img {
     width: 100%;
