@@ -27,7 +27,14 @@ const MainBlock = () => {
                         </Description>
                         <img src={giftImage} alt="gift-image" className="main-block__gift" />
                         <img src={productImage} alt="gift-image" className="main-block__mobile" />
-                        <Button>Участвовать</Button>
+                        <a
+                            className="ux-button ux-button__size_s ux-button__style_void ux-button__margin_false"
+                            href="#"
+                            onClick="ym(57521749, 'reachGoal', 'RUN'); return true;"
+                            target="_blank"
+                        >
+                            Участвовать
+                        </a>
                     </Column>
                 </Column>
             </Column>
