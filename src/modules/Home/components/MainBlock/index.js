@@ -29,7 +29,7 @@ const MainBlock = () => {
                         <img src={productImage} alt="gift-image" className="main-block__mobile" />
                         <a
                             className="ux-button ux-button__size_s ux-button__style_void ux-button__margin_false"
-                            href="https://vk.com/wall-48126202_819000"
+                            href="https://vk.com/wall-48126202_819085"
                             target="_blank"
                         >
                             Участвовать
