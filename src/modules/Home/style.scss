@@ -1,13 +1,12 @@
 .home {
-  &__decor {
-    margin-bottom: rem(70px);
-    img {
-      width: 40%;
+  @include container-size();
+  padding-bottom: rem(200px);
+  &__button {
+    margin: rem(100px 0);
+    @include screen-lt(mobile-small) {
+      button {
+        width: 100%;
+      }
     }
   }
-}
-
-.container {
-  @include container-size();
-  z-index: 2;
 }

@@ -1,11 +1,12 @@
 @import "fonts.scss";
 
-$black: #151A1E;
+$black: #020000;
 $green: #9EE727;
 $white: #fff;
 $grey: #8b9497;
 $bgDark: #1a1a1a;
 $brown: #484848;
+$orange: #FF5000;
 
 @mixin base-sizes() {
   &__size {
@@ -17,7 +18,7 @@ $brown: #484848;
     }
     &_full {
       width: 100%;
-      height: rem(42px);
+      height: rem(85px);
     }
   }
 }
@@ -131,7 +132,7 @@ a {
 body {
   font-size: rem(13px);
   @include main-font(500);
-  background-color: #151C26;
+  background-color: $black;
   padding: 0;
   box-sizing: border-box;
   margin: 0;
@@ -166,10 +167,13 @@ $screenSizes: (
 }
 
 @mixin container-size() {
-  width: 95%;
+  width: rem(1500px);
   margin: auto;
   padding: 0 rem(20px);
   @include screen-lt(desktop) {
+    width: rem(1400px);
+  }
+  @include screen-lt(tablet) {
     width: 100%;
   }
 }

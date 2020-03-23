@@ -3,13 +3,38 @@
   padding: rem(60px 0);
   h2 {
     text-transform: uppercase;
-    margin-bottom: rem(70px);
-    @include screen-lt(mobile) {
-      font-size: 5.5vw;
-    }
+    text-align: center;
   }
   span  {
-    color: $green;
+    color: $orange;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: rem(50px 0);
+  }
+  &_number {
+    font-size: rem(48px);
+    margin-left: rem(10px);
+    @include main-font(600);
+    color: $white;
+    padding: rem(10px 0);
+    width: rem(70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $orange;
+    border-radius: rem(15px);
+    background-color: $black;
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: $orange;
+    text-decoration: underline;
   }
 }
 

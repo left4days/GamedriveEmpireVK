@@ -1,7 +1,7 @@
 $transitionHover: ease-in 200ms;
 $transitionActive: ease-in 150ms;
 
-$btn-void: $green, $black, #B5FF27, $black, #7CC427, $black, $grey, $black;
+$btn-void: $orange, $white, #bf3c00, $white, #DA4900, $white, $grey, $black;
 $btn-fill: transparent, $white, #ff510047, $white, transparent, $white, $grey, $white;
 @mixin btn-style(
   $colorBgDefault,
@@ -40,10 +40,10 @@ $btn-fill: transparent, $white, #ff510047, $white, transparent, $white, $grey, $
   border: none;
   cursor: pointer;
   display: flex;
+  text-transform: uppercase;
   font-size: rem(36px);
   border-radius: rem(10px);
-  @include main-font(700);
-  text-transform: uppercase;
+  @include main-font(600);
   &:focus {
     outline: none;
   }

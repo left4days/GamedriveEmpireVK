@@ -1,25 +1,135 @@
-.main-block {
+.small-block {
   width: 100%;
-  margin-top: rem(150px);
-  height: rem(304px);
+  margin-top: rem(60px);
+  margin-right: rem(30px);
+  height: rem(404px);
   background-image: url('../../../statics/image_background_1card.png');
   background-size: cover;
-  border: 2px solid #DDDCDC;
+  border: 1px solid #DDDCDC;
+  background-repeat: no-repeat;
   border-radius: rem(20px);
   background-position: 8px -6px;
   position: relative;
   padding: rem(0 40px);
+  @include screen-lt(desktop) {
+    height: 23.25rem;
+    background-position: 5px -6px;
+  }
+  @include screen-lt(tablet) {
+    background-position: 0 0;
+    padding: rem(0 20px);
+    .title__size_m {
+      font-size: rem(30px);
+    }
+  }
+
+  &:last-child {
+    margin-left: 30px;
+    margin-right: 0;
+  }
   &:after {
     content: '';
-    background-image: url('../../../statics/image_drakon.png');
-    top: -125px;
-    right: -100px;
-    width: 546px;
     position: absolute;
-    height: 469.29px;
     background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
+    -webkit-background-size: contain;
+    background-size: contain;
+  }
 
+  @include screen-lt(mobile) {
+    margin-right: 0;
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+  &__1 {
+    background-image: url('../../../statics/image_background_2card.png');
+    &:after {
+      background-image: url('../../../statics/imade_cards.png');
+      width: rem(360px);
+      height: rem(323px);
+      right: rem(-50px);
+      bottom: 0;
+      @include screen-lt(desktop) {
+        width: rem(320px);
+        height: rem(290px);
+      }
+      @include screen-lt(desktop) {
+        width: rem(300px);
+        height: rem(260px);
+      }
+      @include screen-lt(mobile) {
+        right: 0;
+      }
+      @include screen-lt(mobile-small) {
+        width: rem(250px);
+        height: rem(200px);
+        right: -20px;
+      }
+    }
+  }
+
+  &__2 {
+    background-image: url('../../../statics/image_background_3card.png');
+    &:after {
+      background-image: url('../../../statics/image_box.png');
+      width: rem(451px);
+      height: rem(463px);
+      right: rem(-55px);
+      bottom: rem(-30px);
+      @include screen-lt(desktop) {
+        width: rem(410px);
+        height: rem(400px);
+      }
+      @include screen-lt(desktop-x-small) {
+        right: rem(-20px);
+      }
+      @include screen-lt(desktop) {
+        width: rem(320px);
+        height: rem(330px);
+      }
+      @include screen-lt(mobile) {
+        right: 0;
+      }
+      @include screen-lt(mobile-small) {
+        width: rem(300px);
+        height: rem(300px);
+        right: -10px;
+      }
+    }
+  }
+
+
+  &__ribbon {
+    background-image: url('../../../statics/ribbon.svg');
+    width: rem(120px);
+    height: rem(80px);
+    background-size: contain;
+    font-size: rem(30px);
+    display: flex;
+    padding-left: rem(25px);
+    align-items: center;
+    background-repeat: no-repeat;
+    @include main-font(700);
+    text-transform: uppercase;
+    color: $white;
+    position: absolute;
+    bottom: rem(40px);
+    left: 0;
+  }
+
+  .title__container {
+    max-width: rem(350px);
+    h2 {
+      text-transform: uppercase;
+    }
+    @include screen-lt(desktop) {
+      max-width: rem(250px);
+    }
+  }
+}
+
+.small-block__container {
+  @include screen-lt(mobile) {
+    flex-direction: column;
   }
 }

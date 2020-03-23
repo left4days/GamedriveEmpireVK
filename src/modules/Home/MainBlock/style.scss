@@ -1,0 +1,69 @@
+.main-block {
+  width: 100%;
+  margin-top: rem(150px);
+  height: rem(304px);
+  @include screen-lt(desktop) {
+    height: 18rem;
+    background-position: 5px -6px;
+  }
+  background-image: url('../../../statics/image_background_1card.png');
+  background-size: cover;
+  border: 1px solid #DDDCDC;
+  border-radius: rem(20px);
+  background-position: 8px -6px;
+  position: relative;
+  padding: rem(0 40px);
+  &:after {
+    content: '';
+    background-image: url('../../../statics/image_drakon.png');
+    top: rem(-125px);
+    right: rem(-100px);
+    width: rem(546px);
+    position: absolute;
+    height: rem(469.29px);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    @include screen-lt(desktop-x-small) {
+      right: rem(-20px);
+    }
+    @include screen-lt(mobile) {
+      bottom: rem(0px);
+      right: rem(-10px);
+      width: rem(300px);
+      height: rem(240.29px);
+      top: auto;
+    }
+    @include screen-lt(mobile-small) {
+      position: static;
+      background-image: none;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  @include screen-lt(tablet) {
+    background-position: 5px 0px;
+    .title__size_l {
+      font-size: rem(46px);
+    }
+  }
+  @include screen-lt(mobile) {
+    background-position: 5px 0px;
+    .title__size_l {
+      font-size: 4.5vw
+    }
+    .title__size_s {
+      font-size: 3.5vw
+    }
+  }
+  @include screen-lt(mobile) {
+    background-position: 5px 0px;
+    .title__size_l {
+      font-size: 6.5vw
+    }
+    .title__size_s {
+      font-size: 5vw
+    }
+  }
+}

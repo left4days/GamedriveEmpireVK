@@ -1,21 +1,20 @@
 import React from 'react';
-import { MainBlock } from './components/MainBlock';
-import { SecondBlock } from './components/SecondBlock';
-import { ThirdBlock } from './components/ThirdBlock';
 import { Column } from 'ui/Layout';
-
-import decorationImage from 'statics/image_3block_decor.png';
+import { Button } from 'ui/Button';
+import { MainBlock } from './MainBlock';
+import { SmallBlock } from './SmallBlock';
+import { ListBlock } from './ListBlock';
 import style from './style.scss';
 
 function Home({ handleModal }) {
     return (
         <Column className={style.home}>
             <MainBlock />
-            <SecondBlock />
-            <ThirdBlock handleModal={handleModal} />
-            <Column className="home__decor">
-                <img src={decorationImage} alt="decoration-image" />
+            <SmallBlock />
+            <Column ai="center" className={style.home__button}>
+                <Button onClick={() => handleModal('default')}>Участвовать</Button>
             </Column>
+            <ListBlock />
         </Column>
     );
 }

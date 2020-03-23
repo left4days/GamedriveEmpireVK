@@ -1,44 +1,39 @@
 import React from 'react';
 import { Column, Row } from 'ui/Layout';
 import { Title } from 'ui/Title';
-import logo1 from 'statics/1.svg';
-import logo2 from 'statics/2.svg';
-import logo3 from 'statics/3.png';
 import './style.scss';
 
+function getRandomInRange() {
+    let numberLength = 6;
+    const min = 1;
+    const max = 9;
+    let result = [];
+    for (let i = 0; i < numberLength; i++) {
+        result.push((Math.floor(Math.random() * (max - min + 1)) + min).toString());
+    }
+    return result;
+}
+
 const DefaultModal = () => {
+    const randomNumber = getRandomInRange();
     return (
         <Column className="modal__default">
             <Title size="m" color="white" weight="700">
-                Вы можете приобрести <span>Seagate Game Drive</span> в следующих магазинах:
+                Ваше число участника
             </Title>
-            <Row jc="space-between">
-                <Column className="modal__icon">
-                    <a
-                        target="_blank"
-                        href="https://www.mvideo.ru/products/vneshnii-zhestkii-disk-2-5-seagate-2tb-game-drive-for-ps4-stgd2000200-50131470?null&_requestid=409691
-                        "
-                    >
-                        <img src={logo1} alt="logo-1" />
-                    </a>
-                </Column>
-                <Column className="modal__icon">
-                    <a
-                        target="_blank"
-                        href="https://www.dns-shop.ru/product/6b0bf9c801051b80/2-tb-vnesnij-hdd-seagate-game-drive-for-ps4-stgd2000200/"
-                    >
-                        <img src={logo2} alt="logo-2" />
-                    </a>
-                </Column>
-                <Column className="modal__icon">
-                    <a
-                        target="_blank"
-                        href="https://www.citilink.ru/catalog/computers_and_notebooks/media/hdd_out/1191642/?utm_source=seagate&utm_medium=display&utm_campaign=vendor_seagate_hdd-for-ps4"
-                    >
-                        <img src={logo3} alt="logo-3" />
-                    </a>
-                </Column>
-            </Row>
+            <div className="modal__default__container">
+                {randomNumber.map((item, i) => (
+                    <div className="modal__default_number" key={i}>
+                        {item}
+                    </div>
+                ))}
+            </div>
+            <Title size="s" color="white" weight="500">
+                Для участия в розыгрыше оставьте свое число участника в комментариях{' '}
+                <a target="_blank" href="https://vk.com/">
+                    под постом вконтакте
+                </a>
+            </Title>
         </Column>
     );
 };

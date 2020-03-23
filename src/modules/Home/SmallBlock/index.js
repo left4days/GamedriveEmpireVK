@@ -3,17 +3,23 @@ import { Row, Column } from 'ui/Layout';
 import { Title } from 'ui/Title';
 import './style.scss';
 
-const MainBlock = () => {
+const SmallBlock = () => {
     return (
-        <Column className="main-block" jc="center">
-            <Title weight="500" size="s">
-                УСКОРЯЙСЯ БЕЗОПАСНО
-            </Title>
-            <Title weight="700" size="l">
-                ВМЕСТЕ С SEAGATE
-            </Title>
-        </Column>
+        <Row className="small-block__container">
+            <Column className="small-block small-block__1" jc="center">
+                <Title weight="700" size="m">
+                    STEAM-CARD
+                </Title>
+                <div className="small-block__ribbon">X20</div>
+            </Column>
+            <Column className="small-block small-block__2" jc="center">
+                <Title weight="700" size="m">
+                    Dotakins Series 1
+                </Title>
+                <div className="small-block__ribbon">X10</div>
+            </Column>
+        </Row>
     );
 };
 
-export { MainBlock };
+export { SmallBlock };
