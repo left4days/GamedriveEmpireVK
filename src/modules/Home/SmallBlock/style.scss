@@ -1,0 +1,25 @@
+.main-block {
+  width: 100%;
+  margin-top: rem(150px);
+  height: rem(304px);
+  background-image: url('../../../statics/image_background_1card.png');
+  background-size: cover;
+  border: 2px solid #DDDCDC;
+  border-radius: rem(20px);
+  background-position: 8px -6px;
+  position: relative;
+  padding: rem(0 40px);
+  &:after {
+    content: '';
+    background-image: url('../../../statics/image_drakon.png');
+    top: -125px;
+    right: -100px;
+    width: 546px;
+    position: absolute;
+    height: 469.29px;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+
+  }
+}
